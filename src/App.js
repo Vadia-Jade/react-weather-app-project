@@ -9,7 +9,8 @@ export default function App() {
       </header>
       <footer>
         <p>
-          This Project was Coded by Jade Coster and is open-sourced on {""}
+          This Project was Coded by Jade Coster and is open-sourced on {""}<a href="https://github.com/Vadia-Jade/react-weather-app-project" target="_blank" rel="noreferrer">GitHub</a> {""}
+          and is hosted on {""} <a href="https://stalwart-medovik-544a4b.netlify.app/" target="_blank" rel="noreferrer">Netlify</a>
         </p>
       </footer>
     </div>
