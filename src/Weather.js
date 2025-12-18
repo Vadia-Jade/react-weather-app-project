@@ -5,9 +5,12 @@ import "./Weather.css";
 
 
 
-export default function Weather(props){
-  const [weatherData, setWeatherData] = useState ({ready:false})
-  const [city, setCity] = useState(props.defaultCity)
+export default function Weather(props) {
+
+  const [weatherData, setWeatherData] = useState ({ready:false});
+
+  const [city, setCity] = useState(props.defaultCity);
+
   function handleResponse(response){
   
     setWeatherData({
@@ -16,10 +19,10 @@ export default function Weather(props){
       temperature: response.data.temperature.current,
       description: response.data.condition.description,
       humidity: response.data.temperature.humidity,
-      wind: Math.round( response.data.wind.speed *  3.6),
-      date:new Date(response.data.time * 1000),
-      icon:response.data.condition.icon,
-      iconUrl:"http://shecodes-assets.s3.amazonaws.com/api/weather/icons/rain-day.png",
+      wind: Math.round( response.data.wind.speed * 3.6),
+      date: new Date( response.data.time * 1000),
+      icon: response.data.condition.icon,
+      iconUrl:`http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`,
     });
   }
    function search(){
@@ -32,10 +35,10 @@ export default function Weather(props){
     search();
   }
   function updateCity(event){
-    setCity(event.target.value)
+    setCity(event.target.value);
   }
  
-  if ( weatherData.ready){
+  if (weatherData.ready){
       return(
         <div className="Weather">
             <header>
@@ -51,7 +54,7 @@ export default function Weather(props){
               </form> 
             </header>
             <main>
-              < WeatherInfo data={weatherData} />   
+              <WeatherInfo data={weatherData} />   
              </main>
         </div>
     );
