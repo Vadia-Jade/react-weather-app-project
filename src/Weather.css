@@ -41,7 +41,8 @@
 main {
    padding: 30px 0;
 }
-.WeatherInfo img {
+.WeatherInfo canvas {
+    margin-right: 5px;
     height: 64px;
     width: 64px;
     float: left;
